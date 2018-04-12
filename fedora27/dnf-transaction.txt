@@ -1,4 +1,4 @@
 upgrade
-install dnf-plugins-core bison flex python python-pip git "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz jenkins-remoting
+install dnf-plugins-core bison flex python python-pip git wget "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz jenkins-remoting
 builddep kernel
 clean all
