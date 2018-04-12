@@ -1,6 +1,6 @@
 FROM fedora:27
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
-RUN dnf -y shell /tmp/dnf-transaction.txt
+RUN dnf -y shell /tmp/dnf-transaction.txt && dnf builddep -y kernel
 RUN rm -fv /tmp/dnf-transaction.txt
 
 # Install skt
