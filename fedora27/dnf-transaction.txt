@@ -1,3 +1,3 @@
 upgrade
-install dnf-plugins-core procps-ng bison flex python python-pip git wget sudo "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz jenkins-remoting
+install dnf-plugins-core procps-ng bison flex python python-pip git wget sudo "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz jenkins-remoting-webapp
 clean all
