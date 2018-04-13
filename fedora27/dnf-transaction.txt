@@ -1,2 +1,3 @@
 upgrade
-install dnf-plugins-core procps-ng bison flex python python-pip git wget sudo "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz jenkins-remoting-webapp
+install dnf-plugins-core procps-ng bison flex python python-pip git wget sudo "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz
+install java-1.8.0-openjdk java-1.8.0-openjdk-headless
