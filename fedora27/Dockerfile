@@ -1,6 +1,6 @@
 FROM fedora:27
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
-RUN dnf -y shell /tmp/dnf-transaction.txt && dnf builddep -y kernel
+RUN dnf -y shell /tmp/dnf-transaction.txt && dnf builddep -y kernel && dnf clean all
 RUN rm -fv /tmp/dnf-transaction.txt
 
 # Install skt
@@ -13,7 +13,6 @@ RUN wget -O /usr/local/bin/jenkins-slave https://raw.githubusercontent.com/jenki
 RUN chmod a+x /usr/local/bin/jenkins-slave
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jenkins
 USER jenkins
-RUN mkdir -p /home/jenkins/.jenkins
 VOLUME /home/jenkins/.jenkins
 WORKDIR /home/jenkins
 
