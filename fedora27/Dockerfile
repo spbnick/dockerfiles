@@ -13,7 +13,6 @@ RUN wget -O /usr/local/bin/jenkins-slave https://raw.githubusercontent.com/jenki
 RUN chmod a+x /usr/local/bin/jenkins-slave
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/jenkins
 USER jenkins
-VOLUME /home/jenkins/.jenkins
 WORKDIR /home/jenkins
 
 ENTRYPOINT ["jenkins-slave"]
