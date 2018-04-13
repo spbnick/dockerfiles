@@ -8,8 +8,7 @@ RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py && python /tmp/
 RUN pip install git+https://github.com/rh-fmk/skt
 
 # Allow the container to work as a Jenkins slave
-RUN mkdir /usr/share/jenkins
-RUN ln -s /usr/share/java/jenkins-remoting/remoting.jar /usr/share/jenkins/slave.jar
+RUN ln -s /usr/share/jenkins/webroot/WEB-INF/slave.jar /usr/share/jenkins/slave.jar
 RUN wget -O /usr/local/bin/jenkins-slave https://raw.githubusercontent.com/jenkinsci/docker-jnlp-slave/master/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave
 RUN useradd --system --shell /bin/bash --create-home --home /home/jenkins jenkins
