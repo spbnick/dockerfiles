@@ -1,4 +1,9 @@
 upgrade
-install "@Development Tools" yum-utils bison flex python git elfutils-libelf-devel openssl-devel bc hostname xz epel-release wget
-clean all
+install epel-release hostname wget yum-utils
+# For skt
+install python
+# For kernel builds
+install "@Development Tools" bc bison elfutils-libelf-devel flex git openssl-devel xz
+# For Jenkins to run its slave agent
+install java-1.8.0-openjdk. java-1.8.0-openjdk-headless
 run
