@@ -1,3 +1,8 @@
 upgrade
-install dnf-plugins-core procps-ng bison flex python python-pip git wget sudo "@Development Tools" elfutils-libelf-devel openssl-devel bc hostname xz
-install java-1.8.0-openjdk java-1.8.0-openjdk-headless
+install procps-ng hostname
+# For skt
+install python wget
+# For kernel builds
+install "@Development Tools" bc bison dnf-plugins-core elfutils-libelf-devel flex git openssl-devel xz
+# For Jenkins to run its slave agent
+install java-1.8.0-openjdk java-1.8.0-openjdk-headless sudo
