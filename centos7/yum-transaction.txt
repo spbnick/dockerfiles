@@ -4,6 +4,8 @@ install epel-release hostname wget yum-utils
 install python
 # For kernel builds
 install "@Development Tools" bc bison elfutils-libelf-devel flex git openssl-devel xz
+# For cross compiles
+install *aarch64-linux-gnu* *powerpc64le-linux-gnu* *aarch64-linux-gnu*
 # For Jenkins to run its slave agent
 install java-1.8.0-openjdk. java-1.8.0-openjdk-headless
 run
