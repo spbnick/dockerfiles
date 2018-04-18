@@ -6,3 +6,9 @@ install python wget
 install "@Development Tools" bc bison dnf-plugins-core elfutils-libelf-devel flex git openssl-devel xz
 # For Jenkins to run its slave agent
 install java-1.8.0-openjdk java-1.8.0-openjdk-headless sudo
+# For ppc64le
+install *ppc64le-linux-gnu*
+# For aarch64
+install *aarch64-linux-gnu*
+# For x86_64
+install *x86_64-linux-gnu*
