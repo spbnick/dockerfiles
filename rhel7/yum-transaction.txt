@@ -1,5 +1,6 @@
+install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 upgrade
-install epel-release hostname wget yum-utils
+install hostname wget yum-utils
 # For skt
 install python
 # For kernel builds
