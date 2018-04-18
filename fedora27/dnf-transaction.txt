@@ -1,5 +1,5 @@
 upgrade
-install procps-ng hostname
+install procps-ng hostname openssl
 # For skt
 install python wget
 # For kernel builds
