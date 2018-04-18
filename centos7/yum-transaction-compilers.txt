@@ -1,0 +1,6 @@
+# For ppc64le
+install *ppc64le-linux-gnu*
+# For aarch64
+install *aarch64-linux-gnu*
+# For x86_64
+install *x86_64-linux-gnu*
