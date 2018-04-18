@@ -4,5 +4,7 @@ install *ppc64le-linux-gnu*
 install *aarch64-linux-gnu*
 # For x86_64
 install *x86_64-linux-gnu*
+# For s390x
+install *s390x-linux-gnu*
 # Do the installation
 run
