@@ -7,9 +7,7 @@ install "@Development Tools" bc bison dnf-plugins-core elfutils-libelf-devel fle
 # For Jenkins to run its slave agent
 install java-1.8.0-openjdk java-1.8.0-openjdk-headless sudo
 # For ppc64
-install binutils-ppc64-linux-gnu gcc-ppc64-linux-gnu gcc-c++-ppc64-linux-gnu
-# For ppc64le
-install binutils-ppc64le-linux-gnu gcc-ppc64le-linux-gnu gcc-c++-ppc64le-linux-gnu
+install binutils-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu gcc-c++-powerpc64le-linux-gnu
 # For ppc64le
 install binutils-s390x-linux-gnu gcc-s390x-linux-gnu gcc-c++-s390x-linux-gnu
 # For x86_64
