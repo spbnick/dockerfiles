@@ -1,4 +1,5 @@
 FROM fedora:27
+RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf builddep -y kernel && \
