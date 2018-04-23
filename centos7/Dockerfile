@@ -1,8 +1,8 @@
 FROM centos:7
 ADD yum-transaction.txt /tmp/yum-transaction.txt
-ADD yum-transaction-compilers.txt /tmp/yum-transaction-compilers.txt
+ADD yum-transaction-epel.txt /tmp/yum-transaction-epel.txt
 RUN yum -y shell /tmp/yum-transaction.txt && \
-      yum -y shell /tmp/yum-transaction-compilers.txt && \
+      yum -y shell /tmp/yum-transaction-epel.txt && \
       yum-builddep -y kernel && \
       yum clean all && \
       rm -rf /var/cache/yum && \
