@@ -1,7 +1,7 @@
 upgrade
 install procps-ng hostname openssl
 # For skt
-install python wget
+install beaker-client python python-krbV wget
 # For kernel builds
 install "@Development Tools" bc bison dnf-plugins-core elfutils-libelf-devel flex git openssl-devel xz
 # For Jenkins to run its slave agent
