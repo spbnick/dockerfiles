@@ -1,4 +1,6 @@
 FROM fedora:27
+RUN curl -# -o /etc/yum.repos.d/beaker-client-Fedora.repo \
+      https://beaker-project.org/yum/beaker-client-Fedora.repo
 RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \

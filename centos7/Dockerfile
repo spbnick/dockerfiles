@@ -1,4 +1,6 @@
 FROM centos:7
+ADD curl -# -o /etc/yum.repos.d/beaker-server-RedHatEnterpriseLinux.repo \
+      https://beaker-project.org/yum/beaker-server-RedHatEnterpriseLinux.repo
 ADD yum-transaction.txt /tmp/yum-transaction.txt
 ADD yum-transaction-epel.txt /tmp/yum-transaction-epel.txt
 RUN yum -y shell /tmp/yum-transaction.txt && \
