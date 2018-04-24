@@ -6,6 +6,8 @@ install beaker-client python python-krbV python-pip
 install "@Development Tools" bc bison dnf-plugins-core elfutils-libelf-devel flex git openssl-devel xz
 # For Jenkins to run its slave agent
 install java-1.8.0-openjdk java-1.8.0-openjdk-headless sudo
+# For aarch64
+install binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu gcc-c++-aarch64-linux-gnu
 # For ppc64
 install binutils-powerpc64le-linux-gnu gcc-powerpc64le-linux-gnu gcc-c++-powerpc64le-linux-gnu
 # For ppc64le
