@@ -9,7 +9,8 @@ RUN yum -y shell /tmp/yum-transaction.txt && \
       rm -fv /tmp/yum-transaction.txt
 
 # Install skt
-RUN pip install -U pip && hash -r pip && pip --version && pip install https://github.com/rh-fmk/skt/archive/master.zip
+RUN pip install -U pip
+RUN git clone https://github.com/rh-fmk/skt && pip install skt/ && rm -rf skt
 
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
