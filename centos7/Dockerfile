@@ -2,9 +2,8 @@ FROM centos:7
 ADD beaker-client-RedHatEnterpriseLinux.repo /etc/yum.repos.d/
 ADD yum-transaction.txt /tmp/yum-transaction.txt
 ADD yum-transaction-epel.txt /tmp/yum-transaction-epel.txt
-RUN yum -y shell /tmp/yum-transaction.txt && \
-      yum -y shell /tmp/yum-transaction-epel.txt && \
-      yum-builddep -y kernel && \
+RUN yum -y install epel-release &&
+      yum -y shell /tmp/yum-transaction.txt && \
       yum clean all && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
