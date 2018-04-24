@@ -7,7 +7,7 @@ RUN dnf -y shell /tmp/dnf-transaction.txt && \
       rm -fv /tmp/dnf-transaction.txt
 
 # Install skt
-RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py && python /tmp/get-pip.py
+RUN pip install -U pip setuptools
 RUN pip install https://github.com/rh-fmk/skt/archive/master.zip
 
 # Allow the container to work as a Jenkins slave
@@ -15,7 +15,7 @@ COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave
 ARG VERSION=3.19
 ARG AGENT_WORKDIR=/home/jenkins/agent
-RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
+RUN curl -# --create-dirs -Lo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 RUN useradd jenkins
