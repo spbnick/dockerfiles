@@ -3,7 +3,6 @@ ADD beaker-client-Fedora.repo /etc/yum.repos.d/
 RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
-      dnf builddep -y kernel && \
       dnf clean all && \
       rm -fv /tmp/dnf-transaction.txt
 
