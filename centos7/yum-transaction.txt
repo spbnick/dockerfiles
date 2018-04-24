@@ -1,5 +1,5 @@
 upgrade
-install epel-release hostname openssl wget yum-utils
+install epel-release hostname htop openssl wget yum-utils
 # For skt
 install beaker-client python python-krbV python-pip
 # For kernel builds
