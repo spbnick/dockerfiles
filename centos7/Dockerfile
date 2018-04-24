@@ -9,6 +9,10 @@ RUN yum -y shell /tmp/yum-transaction.txt && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
 
+# Add CA certificate
+ADD rh-ca.crt /etc/pki/ca-trust/source/anchors/
+RUN update-ca-trust
+
 # Install skt
 RUN pip install -U pip setuptools
 RUN pip install https://github.com/rh-fmk/skt/archive/master.zip

@@ -1,5 +1,5 @@
 # For skt
-install beaker-client python-krbV python-pip
+install python-pip
 # For ppc64le
 install binutils-powerpc64-linux-gnu binutils-powerpc64le-linux-gnu gcc-powerpc64-linux-gnu gcc-c++-powerpc64-linux-gnu
 # For s390x
