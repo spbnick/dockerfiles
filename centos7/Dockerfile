@@ -11,10 +11,6 @@ RUN yum -y install epel-release && \
 ADD rh-ca.crt /etc/pki/ca-trust/source/anchors/
 RUN update-ca-trust
 
-# Install skt
-RUN pip install -U pip setuptools
-RUN pip install https://github.com/rh-fmk/skt/archive/master.zip
-
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave

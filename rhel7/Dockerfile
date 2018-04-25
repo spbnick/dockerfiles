@@ -8,10 +8,6 @@ RUN yum -y shell /tmp/yum-transaction.txt && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
 
-# Install skt
-RUN wget -O /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py && python /tmp/get-pip.py
-RUN pip install https://github.com/rh-fmk/skt/archive/master.zip
-
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave

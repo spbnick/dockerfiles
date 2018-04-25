@@ -6,10 +6,6 @@ RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
       rm -fv /tmp/dnf-transaction.txt
 
-# Install skt
-RUN pip install -U pip setuptools
-RUN pip install https://github.com/rh-fmk/skt/archive/master.zip
-
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave
