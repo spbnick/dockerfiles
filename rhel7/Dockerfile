@@ -1,5 +1,6 @@
 FROM rhel:7
 ADD yum-transaction.txt /tmp/yum-transaction.txt
+ADD beaker-client-RedHatEnterpriseLinux.repo /etc/yum.repos.d/
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
       yum search libxslt && \
       yum -y shell /tmp/yum-transaction.txt && \
