@@ -1,9 +1,10 @@
 FROM rhel:7
 ADD yum-transaction.txt /tmp/yum-transaction.txt
 ADD beaker-client-RedHatEnterpriseLinux.repo /etc/yum.repos.d/
-RUN subscription-manager repos --enable=rhel-7-server-supplementary-rpms && \
-      subscription-manager repos --enable=rhel-7-server-extras-rpms && \
-      subscription-manager repos --enable=rhel-7-server-optional-rpms
+RUN yum -y install yum-utils && \
+      yum-config-manager --enable rhel-7-server-supplementary-rpms && \
+      yum-config-manager --enable enable=rhel-7-server-extras-rpms && \
+      yum-config-manager --enable rhel-7-server-optional-rpms
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
       yum repolist all && \
       yum -y shell /tmp/yum-transaction.txt && \
