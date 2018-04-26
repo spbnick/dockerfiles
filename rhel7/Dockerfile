@@ -1,12 +1,16 @@
 FROM rhel:7
+ADD beaker-client-RedHatEnterpriseLinux.repo /etc/yum.repos.d/
 ADD yum-transaction.txt /tmp/yum-transaction.txt
-ADD yum-transaction-compilers.txt /tmp/yum-transaction-compilers.txt
-RUN yum -y shell /tmp/yum-transaction.txt && \
-      yum -y shell /tmp/yum-transaction-compilers.txt && \
-      yum-builddep -y kernel && \
+RUN yum -y install epel-release && \
+      yum -y shell /tmp/yum-transaction.txt && \
       yum clean all && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
+RUN pip install -U pip setuptools
+
+# Add CA certificate
+ADD rh-ca.crt /etc/pki/ca-trust/source/anchors/
+RUN update-ca-trust
 
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
