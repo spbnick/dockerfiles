@@ -1,7 +1,6 @@
 FROM rhel:7
 ADD yum-transaction.txt /tmp/yum-transaction.txt
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
-      yum repolist && \
       yum -y shell /tmp/yum-transaction.txt && \
       yum clean all && \
       rm -rf /var/cache/yum && \
