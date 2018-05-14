@@ -4,6 +4,7 @@ RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
+      dnf -y install python2-pip && \
       rm -fv /tmp/dnf-transaction.txt
 RUN pip install -U pip setuptools
 
