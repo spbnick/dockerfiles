@@ -4,8 +4,10 @@ RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
-      dnf -y install python2-pip && \
       rm -fv /tmp/dnf-transaction.txt
+
+# DEBUG
+RUN ls -al /usr/bin/pip*
 RUN pip install -U pip setuptools
 
 # Allow the container to work as a Jenkins slave
