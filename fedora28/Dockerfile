@@ -2,9 +2,11 @@ FROM fedora:28
 ADD beaker-client-Fedora.repo /etc/yum.repos.d/
 RUN echo "fastestmirror=true" >> /etc/dnf/dnf.conf
 ADD dnf-transaction.txt /tmp/dnf-transaction.txt
-RUN dnf -y shell /tmp/dnf-transaction.txt && \
+RUN dnf -y install python2-pip && \
+      dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
       rm -fv /tmp/dnf-transaction.txt
+RUN ls -al /usr/bin/pip*
 RUN pip install -U pip setuptools
 
 # Allow the container to work as a Jenkins slave
