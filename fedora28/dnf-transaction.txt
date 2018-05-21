@@ -5,7 +5,7 @@ repo list
 # Upgrade the system
 upgrade
 # Install basics
-install procps-ng hostname htop openssl
+install procps-ng hostname htop openssl tmux
 # For skt
 install beaker-client python-krbV python2-pip python3-pip
 # For kernel builds
