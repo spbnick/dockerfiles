@@ -1,7 +1,7 @@
 upgrade
 install epel-release glibc-static hostname htop numactl-devel openssl wget yum-utils
 # For skt
-install beaker-client python python-krbV python-pip
+install beaker-client python python-krbV python-pip sysstat lsof
 # For kernel builds
 install "@Development Tools" bc bison elfutils-libelf-devel flex git ncurses-devel openssl openssl-devel xz
 # For Jenkins to run its slave agent
