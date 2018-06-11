@@ -20,7 +20,7 @@ ARG AGENT_WORKDIR=/home/jenkins/agent
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
-RUN useradd jenkins
+RUN useradd -u 10000 -g 10000 jenkins
 USER jenkins
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/jenkins/.jenkins && mkdir -p ${AGENT_WORKDIR}
