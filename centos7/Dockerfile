@@ -6,10 +6,7 @@ RUN yum -y install epel-release centos-release-scl && \
       yum clean all && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
-
-# Prefer the git installed via scl
-RUN mv /usr/bin/git /usr/bin/git-original && \
-      ln -s /opt/rh/rh-git29/root/usr/bin/git /usr/bin/git
+RUN scl enable rh-git29 bash
 RUN pip install -U pip setuptools
 
 # Add CA certificate
