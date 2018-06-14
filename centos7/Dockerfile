@@ -1,11 +1,12 @@
 FROM centos:7
 # ADD beaker-client-RedHatEnterpriseLinux.repo /etc/yum.repos.d/
 ADD yum-transaction.txt /tmp/yum-transaction.txt
-RUN yum -y install epel-release && \
+RUN yum -y install epel-release centos-release-scl && \
       yum -y shell /tmp/yum-transaction.txt && \
       yum clean all && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
+RUN scl enable rh-git29 bash
 RUN pip install -U pip setuptools
 
 # Add CA certificate
