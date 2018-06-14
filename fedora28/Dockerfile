@@ -5,6 +5,14 @@ ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
       rm -fv /tmp/dnf-transaction.txt
+RUN curl -O https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.17.1.tar.xz &&
+      tar xf git-2.17.1.tar.xz &&
+      cd git-2.17.1 &&
+      ./configure &&
+      make &&
+      make install &&
+      cd .. &&
+      rm -rf git-2.17.1*
 RUN pip install -U pip setuptools
 
 # Allow the container to work as a Jenkins slave
