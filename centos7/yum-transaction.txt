@@ -1,7 +1,7 @@
 upgrade
 install epel-release hostname htop openssl wget yum-utils
 # For skt
-install aria2 beaker-client python python-krbV python-pip sysstat lsof
+install aria2 beaker-client perl python python-krbV python-pip sysstat lsof
 # For kernel builds
 install asciidoc audit-libs-devel "@Development Tools" binutils-devel bc bison elfutils-devel elfutils-libelf-devel flex gcc git hmaccalc java-devel ncurses-devel net-tools newt-devel numactl-devel openssl openssl-devel pciutils-devel perl-ExtUtils-Embed pesign python-devel xmlto xz
 # For Jenkins to run its slave agent
