@@ -5,7 +5,7 @@ repo list
 # Upgrade the system
 upgrade
 # Install basics
-install aria2 procps-ng hostname htop openssl sysstat lsof perl tmux wget
+install aria2 ccache procps-ng hostname htop openssl sysstat lsof perl tmux wget
 # For skt
 install beaker-client python-krbV python2-pip python3-pip
 # For kernel builds
