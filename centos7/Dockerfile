@@ -6,7 +6,7 @@ RUN yum -y install epel-release && \
       yum clean all && \
       rm -rf /var/cache/yum && \
       rm -fv /tmp/yum-transaction.txt
-RUN pip install -U pip setuptools
+RUN pip install -U pip setuptools && pip install ansible
 
 # Add CA certificate
 ADD rh-ca.crt /etc/pki/ca-trust/source/anchors/
