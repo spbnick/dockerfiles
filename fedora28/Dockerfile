@@ -5,7 +5,7 @@ ADD dnf-transaction.txt /tmp/dnf-transaction.txt
 RUN dnf -y shell /tmp/dnf-transaction.txt && \
       dnf clean all && \
       rm -fv /tmp/dnf-transaction.txt
-RUN pip install -U pip setuptools && pip install ansible
+RUN pip install -U pip setuptools virtualenv
 
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
