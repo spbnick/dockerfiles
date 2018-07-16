@@ -10,7 +10,7 @@ RUN pip install -U pip setuptools virtualenv
 # Allow the container to work as a Jenkins slave
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod a+x /usr/local/bin/jenkins-slave
-ARG VERSION=3.19
+ARG VERSION=3.23
 ARG AGENT_WORKDIR=/home/jenkins/agent
 RUN curl -# --create-dirs -Lo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
   && chmod 755 /usr/share/jenkins \
