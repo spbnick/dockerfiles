@@ -9,6 +9,7 @@ RUN yum -y install epel-release && \
 RUN pip install -U pip setuptools virtualenv
 
 ADD compile-git.sh /tmp/compile-git.sh
+RUN yum-builddep -y git
 RUN /tmp/compile-git.sh
 
 # Add CA certificate
